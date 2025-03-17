@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:root}
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/case_fs_db}
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8080
+  cors: ${CORS_ALLOWED:false} # false
+  servlet:
+    context-path: /v1
+
+fs:
+  app:
+    jwtSecret: ======================POC=FS===========================

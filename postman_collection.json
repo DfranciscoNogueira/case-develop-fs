@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "508affdb-a36e-4bf5-bcf2-cc0155a1315d",
+		"name": "case-develop-fs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37803682"
+	},
+	"item": [
+		{
+			"name": "Auth - signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"username\" : \"Diego\",\r\n   \"email\" : \"diego@gmail.com\",\r\n   \"role\" : [\"ADMIN\"],\r\n   \"password\" : \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"username\" : \"Diego\",\r\n   \"password\" : \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/api/auth/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product - create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEaWVnbyIsImlhdCI6MTc0MjA4MjMzMiwiZXhwIjoxNzQyMTE4MzMyfQ.wN8fjdfnScQsWtKikNa9qKOK9zTH4jJK2YNGXY8qPc4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\" : \"Cabo HDMI\",\r\n   \"price\" : 100,\r\n   \"description\" : \"Cabo de conexão HDMI\",\r\n   \"quantity\" : 25,\r\n   \"idCategory\" : \"578a3179-bde3-4fef-a820-30545a0ffb1b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/api/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order - create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEaWVnbyIsImlhdCI6MTc0MjE0NDk4OSwiZXhwIjoxNzQyMTgwOTg5fQ.nm9TQz-WlpLbWyu5s7Esj3ONFCKMfLFwxtrvWkUzltA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"productsId\" : [\"0f47a690-026a-11f0-ac7b-00090ffe0001\", \"0f47f1d6-026a-11f0-ac7b-00090ffe0001\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/api/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product - delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEaWVnbyIsImlhdCI6MTc0MTg0NTc4MiwiZXhwIjoxNzQxODgxNzgyfQ.MVDa8mxDGXS0ESNSunc8AnJojZxFax3mYqR-EmUWmEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/api/product/f6d00d16-db2f-4f72-912a-6586c6d5ba7c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"product",
+						"f6d00d16-db2f-4f72-912a-6586c6d5ba7c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product - getById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEaWVnbyIsImlhdCI6MTc0MjA4MjMzMiwiZXhwIjoxNzQyMTE4MzMyfQ.wN8fjdfnScQsWtKikNa9qKOK9zTH4jJK2YNGXY8qPc4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/api/product/f6d00d16-db2f-4f72-912a-6586c6d5ba7c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"product",
+						"f6d00d16-db2f-4f72-912a-6586c6d5ba7c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order - getById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEaWVnbyIsImlhdCI6MTc0MjA4MjMzMiwiZXhwIjoxNzQyMTE4MzMyfQ.wN8fjdfnScQsWtKikNa9qKOK9zTH4jJK2YNGXY8qPc4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/api/order/f6d00d16-db2f-4f72-912a-6586c6d5ba7c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"order",
+						"f6d00d16-db2f-4f72-912a-6586c6d5ba7c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product - update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEaWVnbyIsImlhdCI6MTc0MTg0NTc4MiwiZXhwIjoxNzQxODgxNzgyfQ.MVDa8mxDGXS0ESNSunc8AnJojZxFax3mYqR-EmUWmEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id\" : \"f6d00d16-db2f-4f72-912a-6586c6d5ba7c\",\r\n   \"name\" : \"Cabo - HDMI\",\r\n   \"price\" : 100,\r\n   \"description\" : \"Cabo de conexão HDMI\",\r\n   \"quantity\" : 25,\r\n   \"category\":{\r\n        \"id\" : \"14807af8-902e-4407-8d45-30ba4ba273da\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/api/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product - getAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEaWVnbyIsImlhdCI6MTc0MjEzMTc4NSwiZXhwIjoxNzQyMTY3Nzg1fQ.WwC8pLtDkC4Fm8FOBHcNLnlmiBQeAI-I_fE9XYsO0qg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/api/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order - getAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEaWVnbyIsImlhdCI6MTc0MjA4MjMzMiwiZXhwIjoxNzQyMTE4MzMyfQ.wN8fjdfnScQsWtKikNa9qKOK9zTH4jJK2YNGXY8qPc4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/api/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order - pay",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEaWVnbyIsImlhdCI6MTc0MjE0NTIyNSwiZXhwIjoxNzQyMTgxMjI1fQ.QjhbdMq_NJfLTQlfAiPuZE8C4UcFP3CjqKXl6bTJpJo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/api/order/top-five-purchases/details",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"order",
+						"top-five-purchases",
+						"details"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
